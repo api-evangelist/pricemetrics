@@ -1,0 +1,99 @@
+name: PriceMetrics API Rate Limits
+description: >-
+  PriceMetrics enforces rate limits on all API endpoints to ensure platform
+  stability and fair use across all customers. Limits are applied per API key
+  at both per-minute and monthly thresholds. Customers who exceed monthly
+  quotas can purchase additional call packs or upgrade their plan. The
+  Batch Processing API has separate limits from the real-time recommendations
+  API. Rate limit status is available via response headers on every API call.
+url: https://www.pricimetrics.com/documentation/rate-limits
+headers:
+  - name: X-RateLimit-Limit
+    description: The maximum number of requests allowed in the current window.
+  - name: X-RateLimit-Remaining
+    description: The number of requests remaining in the current window.
+  - name: X-RateLimit-Reset
+    description: Unix timestamp when the current rate limit window resets.
+  - name: X-RateLimit-Monthly-Limit
+    description: Total API calls allowed in the current billing month.
+  - name: X-RateLimit-Monthly-Remaining
+    description: API calls remaining in the current billing month.
+limits:
+  - plan: Starter
+    per_minute: 60
+    per_hour: 1000
+    per_day: 5000
+    per_month: 10000
+    concurrent_requests: 5
+    batch_jobs_per_day: 2
+    batch_records_per_job: 1000
+
+  - plan: Growth
+    per_minute: 300
+    per_hour: 5000
+    per_day: 25000
+    per_month: 100000
+    concurrent_requests: 20
+    batch_jobs_per_day: 10
+    batch_records_per_job: 5000
+
+  - plan: Professional
+    per_minute: 1000
+    per_hour: 20000
+    per_day: 100000
+    per_month: 500000
+    concurrent_requests: 50
+    batch_jobs_per_day: 50
+    batch_records_per_job: 25000
+
+  - plan: Enterprise
+    per_minute: custom
+    per_hour: custom
+    per_day: custom
+    per_month: custom
+    concurrent_requests: custom
+    batch_jobs_per_day: custom
+    batch_records_per_job: custom
+
+endpoints:
+  - path: /v1/recommendations
+    description: Real-time price optimization recommendations
+    rate_limit_weight: 1
+    notes: Each SKU in a batch request counts as one call unit.
+
+  - path: /v1/elasticity
+    description: Price elasticity analysis
+    rate_limit_weight: 5
+    notes: >-
+      Elasticity computations are resource-intensive; each request is
+      weighted as 5 call units against the rate limit.
+
+  - path: /v1/competitive
+    description: Competitive pricing data lookup
+    rate_limit_weight: 2
+    notes: Each competitive price lookup is weighted as 2 call units.
+
+  - path: /v1/scenarios
+    description: What-if scenario modeling
+    rate_limit_weight: 10
+    notes: Scenario modeling requests are weighted as 10 call units each.
+
+  - path: /v1/batch
+    description: Batch processing submissions
+    rate_limit_weight: 0
+    notes: >-
+      Batch jobs are governed by batch_jobs_per_day and
+      batch_records_per_job limits rather than per-minute rate limits.
+
+error_codes:
+  - code: 429
+    message: Too Many Requests
+    description: >-
+      The API key has exceeded the per-minute or per-hour rate limit.
+      Retry after the number of seconds indicated in the Retry-After
+      response header.
+  - code: 402
+    message: Monthly Quota Exceeded
+    description: >-
+      The account has consumed its monthly API call allocation. Upgrade
+      the plan or purchase an additional call pack to continue.

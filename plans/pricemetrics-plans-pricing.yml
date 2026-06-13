@@ -1,0 +1,113 @@
+name: PriceMetrics Plans and Pricing
+description: >-
+  PriceMetrics offers tiered subscription plans designed to fit businesses
+  of varying size and complexity. Plans are differentiated by the number of
+  SKUs managed, API call volume, access to advanced elasticity modeling,
+  competitive data feeds, and level of support. All plans include access
+  to the core pricing recommendations API and the analytics dashboard.
+url: https://www.pricimetrics.com/pricing
+plans:
+  - name: Starter
+    description: >-
+      Entry-level plan for small retailers and distributors managing up to
+      5,000 SKUs. Includes core price optimization recommendations and
+      basic analytics via the API.
+    price: 499
+    currency: USD
+    period: monthly
+    features:
+      - Up to 5,000 active SKUs
+      - Price optimization recommendations API
+      - Basic elasticity analysis
+      - Historical pricing trends (90-day lookback)
+      - Standard support via email
+      - Up to 10,000 API calls per month
+      - REST API access
+      - JSON data format
+    limits:
+      skus: 5000
+      api_calls_monthly: 10000
+      lookback_days: 90
+      users: 3
+
+  - name: Growth
+    description: >-
+      Mid-tier plan for growing businesses managing up to 25,000 SKUs with
+      advanced features including competitive price tracking, scenario
+      modeling, and revenue impact forecasting.
+    price: 1499
+    currency: USD
+    period: monthly
+    features:
+      - Up to 25,000 active SKUs
+      - Full price optimization recommendations API
+      - Advanced elasticity analysis
+      - Competitive price tracking and comparison
+      - Historical pricing trends (1-year lookback)
+      - What-if scenario modeling
+      - Revenue impact forecasting
+      - Priority email and chat support
+      - Up to 100,000 API calls per month
+      - Webhook event notifications
+      - Batch processing API
+    limits:
+      skus: 25000
+      api_calls_monthly: 100000
+      lookback_days: 365
+      users: 10
+      webhooks: 5
+
+  - name: Professional
+    description: >-
+      Advanced plan for larger operations managing up to 100,000 SKUs with
+      full feature access including real-time competitive intelligence,
+      multi-segment elasticity, and dedicated onboarding support.
+    price: 3999
+    currency: USD
+    period: monthly
+    features:
+      - Up to 100,000 active SKUs
+      - Full price optimization recommendations API
+      - Multi-segment elasticity modeling
+      - Real-time competitive pricing intelligence
+      - Historical pricing trends (3-year lookback)
+      - Advanced scenario and margin simulation
+      - Revenue and profit optimization dashboards
+      - Dedicated onboarding and customer success manager
+      - Up to 500,000 API calls per month
+      - Webhooks (up to 25 endpoints)
+      - Bulk data export API
+      - SSO / SAML 2.0 integration
+    limits:
+      skus: 100000
+      api_calls_monthly: 500000
+      lookback_days: 1095
+      users: 25
+      webhooks: 25
+
+  - name: Enterprise
+    description: >-
+      Custom enterprise plan for large-scale retailers, manufacturers, and
+      distributors with unlimited SKUs, dedicated infrastructure, SLA
+      guarantees, and bespoke integrations.
+    price: custom
+    currency: USD
+    period: monthly
+    features:
+      - Unlimited active SKUs
+      - Dedicated API infrastructure
+      - Custom elasticity model training
+      - Real-time competitive intelligence with custom data feeds
+      - Unlimited historical data lookback
+      - Advanced ML price recommendation engine
+      - Custom API rate limits
+      - 99.9% uptime SLA
+      - Dedicated support team with named contacts
+      - Private cloud or on-premises deployment options
+      - Custom data integrations (ERP, PIM, e-commerce platforms)
+      - Advanced security controls and audit logging
+    limits:
+      skus: unlimited
+      api_calls_monthly: custom
+      users: unlimited
+      webhooks: unlimited

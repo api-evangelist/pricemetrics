@@ -1,0 +1,128 @@
+name: PriceMetrics FinOps Guide
+description: >-
+  This FinOps guide helps engineering and finance teams understand, monitor,
+  and optimize their PriceMetrics API spending. Because API call volume
+  directly maps to subscription tier costs and overage charges, teams should
+  establish budgets, monitor usage in real time, and implement call efficiency
+  patterns to control costs while maximizing the value of the PriceMetrics
+  integration.
+url: https://www.pricimetrics.com/documentation/finops
+
+cost_structure:
+  model: subscription_plus_overage
+  description: >-
+    PriceMetrics charges a fixed monthly subscription fee based on the
+    selected plan tier. API calls within the plan's monthly quota are
+    included. Calls beyond the quota incur overage charges or require
+    an upgrade or add-on call pack.
+  overage_rate:
+    starter:
+      per_1000_calls: 5.00
+      currency: USD
+    growth:
+      per_1000_calls: 3.50
+      currency: USD
+    professional:
+      per_1000_calls: 2.00
+      currency: USD
+  call_packs:
+    - name: 50K Call Pack
+      calls: 50000
+      price: 199
+      currency: USD
+    - name: 250K Call Pack
+      calls: 250000
+      price: 799
+      currency: USD
+    - name: 1M Call Pack
+      calls: 1000000
+      price: 2499
+      currency: USD
+
+monitoring:
+  dashboard_url: https://app.pricemetrics.com/usage
+  description: >-
+    The PriceMetrics developer dashboard provides real-time usage graphs,
+    monthly consumption trends, per-endpoint breakdowns, and alerts for
+    approaching quota thresholds.
+  alert_thresholds:
+    - threshold_pct: 75
+      action: Email notification to account owner
+    - threshold_pct: 90
+      action: Email and webhook notification to configured alert endpoint
+    - threshold_pct: 100
+      action: API returns 402 errors; account owner notified
+
+  available_metrics:
+    - Total API calls this month
+    - Calls by endpoint
+    - Calls by API key
+    - Batch job usage
+    - SKU volume ingested
+    - Average latency by endpoint
+    - Error rate by endpoint
+
+cost_optimization:
+  strategies:
+    - name: Cache recommendations locally
+      description: >-
+        Price recommendations for stable product categories do not change
+        on every API call. Implement a local cache with a TTL of 1–6 hours
+        for recommendations to reduce redundant calls significantly.
+      estimated_savings: 40-60% reduction in calls for stable catalogs
+
+    - name: Use batch processing for bulk updates
+      description: >-
+        For nightly or periodic repricing runs, use the /v1/batch endpoint
+        rather than individual /v1/recommendations calls. Batch calls are
+        not counted against per-minute limits and process efficiently
+        at scale.
+      estimated_savings: Eliminates per-call overhead for bulk workflows
+
+    - name: Request only changed SKUs
+      description: >-
+        Use the lastModified and changesSince query parameters to fetch
+        recommendations only for SKUs whose underlying data (cost, demand,
+        competitor price) has changed since the last call.
+      estimated_savings: 20-50% for catalogs with low daily change rates
+
+    - name: Tune elasticity call frequency
+      description: >-
+        Elasticity analysis is weighted at 5 call units. Run elasticity
+        analyses on a weekly or biweekly schedule rather than on demand,
+        and cache results between runs.
+      estimated_savings: Significant reduction in weighted call consumption
+
+    - name: Scope competitive data to priority SKUs
+      description: >-
+        Competitive price lookups are weighted at 2 call units. Limit
+        competitive intelligence queries to high-velocity or high-margin
+        SKUs where competitor pricing most directly affects revenue.
+      estimated_savings: 30-50% reduction in weighted competitive call costs
+
+    - name: Right-size your plan
+      description: >-
+        Review monthly usage reports quarterly. If consumption consistently
+        runs below 60% of the plan quota, consider downgrading. If
+        overages are recurring, upgrading plans is more cost-effective
+        than purchasing repeated call packs.
+
+budgeting:
+  recommendations:
+    - Establish a monthly API cost budget aligned to the subscription plan cost
+    - Set spend alerts at 75% and 90% of budget in the usage dashboard
+    - Assign a single API key per integration environment (dev, staging, prod)
+      to isolate cost attribution
+    - Review per-key usage breakdowns monthly to identify runaway consumers
+    - Include overage rates in annual API cost projections for catalog growth
+
+tagging:
+  description: >-
+    PriceMetrics supports API key labeling via the developer dashboard.
+    Assign descriptive labels to each API key to correlate usage with
+    business units, applications, or environments for accurate cost
+    allocation in internal chargeback or showback reporting.
+  recommended_labels:
+    - environment: production | staging | development
+    - team: pricing | merchandising | analytics | engineering
+    - application: ecommerce-platform | erp-integration | reporting

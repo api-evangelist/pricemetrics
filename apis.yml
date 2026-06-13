@@ -1,0 +1,79 @@
+aid: pricemetrics
+name: PriceMetrics
+description: >-
+  PriceMetrics is a price optimization and analytics platform that provides
+  REST APIs for tracking competitive pricing data, performing elasticity
+  analysis, and delivering revenue optimization recommendations. The platform
+  enables businesses to integrate real-time pricing intelligence directly into
+  their applications and workflows, supporting dynamic pricing strategies,
+  margin analysis, and data-driven revenue management across retail,
+  distribution, and manufacturing verticals.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Pricing
+  - Price Optimization
+  - Competitive Intelligence
+  - Revenue Management
+  - Analytics
+  - Elasticity Analysis
+  - Retail
+  - Commerce
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/pricemetrics/refs/heads/main/apis.yml
+created: "2026-06-13"
+modified: "2026-06-13"
+specificationVersion: "0.19"
+apis:
+  - aid: pricemetrics:pricemetrics-pricing-api
+    name: PriceMetrics Pricing API
+    description: >-
+      The PriceMetrics Pricing API provides programmatic access to price
+      optimization recommendations, competitive price tracking, elasticity
+      analysis, and revenue optimization insights. Clients submit transaction
+      and product data to receive profit-maximizing price recommendations with
+      transparent reasoning, what-if scenario modeling, and competitive
+      constraint analysis.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.pricimetrics.com
+    baseURL: https://api.pricemetrics.com/v1
+    tags:
+      - Pricing
+      - Optimization
+      - Elasticity
+      - Revenue
+      - Analytics
+    properties:
+      - type: Documentation
+        url: https://www.pricimetrics.com/documentation
+      - type: OpenAPI
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/pricemetrics/refs/heads/main/openapi.yml
+    contact:
+      - FN: PriceMetrics Support
+        email: support@pricimetrics.com
+common:
+  - type: Website
+    url: https://www.pricimetrics.com
+  - type: Documentation
+    url: https://www.pricimetrics.com/documentation
+  - type: GitHubOrg
+    url: https://github.com/pricemetrics
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/pricimetrics
+  - type: Blog
+    url: https://www.pricimetrics.com/blog
+  - type: Pricing
+    url: https://www.pricimetrics.com/pricing
+  - type: StatusPage
+    url: https://status.pricemetrics.com
+  - type: X
+    url: https://x.com/pricemetrics
+  - type: Plans
+    url: plans/pricemetrics-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/pricemetrics-rate-limits.yml
+  - type: FinOps
+    url: finops/pricemetrics-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
