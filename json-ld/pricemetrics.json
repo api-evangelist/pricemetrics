@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PriceMetrics",
+  "description": "PriceMetrics is a price optimization and analytics platform that provides REST APIs for tracking competitive pricing data, performing elasticity analysis, and delivering revenue optimization recommendations. The platform enables businesses to integrate real-time pricing intelligence directly into their applications and workflows, supporting dynamic pricing strategies, margin analysis, and data-driven revenue management across retail, distribution, and manufacturing verticals.",
+  "url": "https://www.pricimetrics.com",
+  "applicationCategory": "BusinessApplication",
+  "keywords": [
+    "Pricing",
+    "Price Optimization",
+    "Competitive Intelligence",
+    "Revenue Management",
+    "Analytics",
+    "Elasticity Analysis",
+    "Retail",
+    "Commerce"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.pricimetrics.com/pricing"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/pricimetrics",
+    "https://x.com/pricemetrics",
+    "https://github.com/pricemetrics"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.pricimetrics.com"
+  },
+  "potentialAction": {
+    "@type": "Action",
+    "name": "API Documentation",
+    "target": "https://www.pricimetrics.com/documentation"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "PriceMetrics",
+    "url": "https://www.pricimetrics.com",
+    "email": "support@pricimetrics.com",
+    "sameAs": [
+      "https://www.linkedin.com/company/pricimetrics",
+      "https://x.com/pricemetrics"
+    ]
+  }
+}
