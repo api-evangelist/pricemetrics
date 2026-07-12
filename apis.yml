@@ -52,6 +52,8 @@ apis:
       - FN: PriceMetrics Support
         email: support@pricimetrics.com
 common:
+  - type: DomainSecurity
+    url: security/pricemetrics-domain-security.yml
   - type: Website
     url: https://www.pricimetrics.com
   - type: Documentation
