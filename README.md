@@ -66,28 +66,103 @@
 
 PriceMetrics is a price optimization and analytics platform that provides REST APIs for tracking competitive pricing data, performing elasticity analysis, and delivering revenue optimization recommendations. The platform enables businesses to integrate real-time pricing intelligence directly into their applications and workflows, supporting dynamic pricing strategies, margin analysis, and data-driven revenue management across retail, distribution, and manufacturing verticals.
 
-## APIs
+**Areas:** Pricing · Price Optimization · Competitive Intelligence · Revenue Management · Analytics · Elasticity Analysis · Retail · Commerce
 
-- **PriceMetrics Pricing API** — Core REST API for price optimization recommendations, competitive pricing data, elasticity analysis, and what-if scenario modeling.
+## PriceMetrics on APIs.io
 
-## Resources
+Everything profiled for PriceMetrics is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/pricemetrics/](https://apis.io/providers/pricemetrics/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [PriceMetrics Pricing API](https://apis.io/apis/pricemetrics/pricemetrics-pricing-api/) — The PriceMetrics Pricing API provides programmatic access to price optimization recommendations, competitive price tracking, elasticity analysis, and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Pricemetrics Domain Security](https://apis.io/security/pricemetrics/pricemetrics-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Pricemetrics Plans Pricing](https://apis.io/plans/pricemetrics/pricemetrics-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Pricemetrics Rate Limits](https://apis.io/rate-limits/pricemetrics/pricemetrics-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Pricemetrics Finops](https://apis.io/finops/pricemetrics/pricemetrics-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.pricimetrics.com)
 - [Documentation](https://www.pricimetrics.com/documentation)
-- [Blog](https://www.pricimetrics.com/blog)
 - [Pricing](https://www.pricimetrics.com/pricing)
-- [Status Page](https://status.pricemetrics.com)
-- [LinkedIn](https://www.linkedin.com/company/pricimetrics)
+- [Blog](https://www.pricimetrics.com/blog)
+- [Status](https://status.pricemetrics.com)
 
-## Catalog Files
+## API Evangelist rating
 
-| File | Description |
-|------|-------------|
-| [apis.yml](apis.yml) | APIs.json 0.19 provider index |
-| [plans/pricemetrics-plans-pricing.yml](plans/pricemetrics-plans-pricing.yml) | Subscription plan details and feature matrix |
-| [rate-limits/pricemetrics-rate-limits.yml](rate-limits/pricemetrics-rate-limits.yml) | API rate limit policies by plan and endpoint |
-| [finops/pricemetrics-finops.yml](finops/pricemetrics-finops.yml) | FinOps guide for cost monitoring and optimization |
+**Kin Score 15.6** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainer
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 24.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 7.9 |
 
-**Kin Lane** — kin@apievangelist.com
+**Agent readiness 13.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/pricemetrics/](https://apis.io/providers/pricemetrics/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for PriceMetrics: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/pricemetrics/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
